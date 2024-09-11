@@ -21,3 +21,4 @@ print(
     'I love programming: ' + str(loves_programming) + ', ' +
     'I am chad: ' + str(is_chad) + '.'
 )
+

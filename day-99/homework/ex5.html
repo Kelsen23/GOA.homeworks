@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+
+  <input class="js-input" placeholder="Enter Password"></input>
+  <button class="js-submit-btn">Submit</button>
+  <p class="js-p"></p>
+  
+<script>
+
+  class User {
+
+    constructor(password) {
+      this.password = password;
+      this.#validatePassword();
+    }
+
+    #validatePassword() {
+      if (this.password.length <= 8) {
+        setTimeout(() => {
+          document.querySelector('.js-p').innerText = ``
+        }, 1500);
+         document.querySelector('.js-p').innerText = `Your password's lenght is too short! Should be atleast 8 characters`;
+      } else {
+        document.querySelector('.js-p').innerText = `Your password is set!`;
+      }
+    }
+  }
+
+  document.querySelector('.js-submit-btn').addEventListener('click', () => {
+    let passwordValue = document.querySelector('.js-input').value;
+    const user = new User(passwordValue);
+  });
+
+</script>
+
+</body>
+</html>

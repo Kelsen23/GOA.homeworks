@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+  
+<script>
+  class Player {
+    static playerCount = 0;
+
+    constructor (name) {
+      this.name = name;
+      Player.increasePlayerCount();
+    }
+
+    static increasePlayerCount () {
+      Player.playerCount++;
+    }
+
+    static getPlayerCount () {
+      return Player.playerCount;
+    }
+  }
+
+  const player1= new Player("Jumbera");
+  const player2 = new Player("Jamala");
+
+  console.log(`There are ${Player.playerCount} players`)
+
+
+  
+
+
+
+</script>
+
+</body>
+</html>

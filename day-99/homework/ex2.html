@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+</head>
+<body>
+  
+<script>
+  class BankAccount {
+    #balance
+
+    constructor(balance) {
+      this.#balance = balance;
+    }
+
+    deposit (depNum) {
+      this.#balance += depNum;
+      console.log(`Your balance is: ${this.#balance}$ after deposit`);
+    }
+
+    withdraw (withdrawNum) {
+      this.#balance -= withdrawNum;
+      console.log(`Your balance is: ${this.#balance}$ after withdraw`);
+    }
+
+  }
+
+  const bankAcc = new BankAccount(2500);
+
+  bankAcc.deposit(500);
+  bankAcc.withdraw(1000);
+  bankAcc.deposit(2000);
+
+</script>
+
+</body>
+</html>

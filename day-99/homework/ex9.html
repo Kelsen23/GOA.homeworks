@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+
+  <script>
+    class Student {
+
+      constructor (name, grade) {
+        this.name = name;
+        this.grade = grade;
+      }
+
+      static compareGrades (student1, student2) {
+
+        let result;
+
+        if (student1.grade > student2.grade && student1.grade - student2.grade === 1) {
+          result = `${student1.name} has better grade than ${student2.name} by ${student1.grade - student2.grade} point`;
+        } else if (student1.grade < student2.grade && student2.grade - student1.grade === 1) {
+          result = `${student2.name} has better grade than ${student1.name} by ${student2.grade - student1.grade} point`;
+        } else if (student1.grade === student2.grade) {
+          result = `${student1.name} and ${student2.name} have same grades`;
+        } else if (student1.grade > student2.grade && student2.grade - student1.grade != 1) {
+          result = `${student1.name} has better grade than ${student2.name} by ${student1.grade - student2.grade} points`;
+        } else if (student1.grade < student2.grade && student2.grade - student1.grade != 1) {
+          result = `${student2.name} has better grade than ${student1.name} by ${student2.grade - student1.grade} points`;
+        }
+
+        return result;
+      }
+    }
+
+    const studentA = new Student("Jaba", 9);
+    const studentB = new Student("Boba", 10);
+
+    console.log(Student.compareGrades(studentA, studentB));
+
+  </script>
+  
+</body>
+</html>

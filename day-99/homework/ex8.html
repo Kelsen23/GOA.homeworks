@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+  
+<script>
+  class Vehicle {
+
+    #speed;
+
+    constructor () {
+      this.#speed = 0;
+    }
+
+    setSpeed (value) {
+      if (value >= 0) {
+        this.#speed = value;
+      } else {
+        console.error("Vehicle speed mustn't be negative");
+      }
+    }
+
+    getSpeed () {
+      return this.#speed;
+    }
+
+  }
+
+  class Bike extends Vehicle {
+    constructor () {
+      super();
+    }
+
+    bikeSpeed () {
+      console.log(`Speed of bike is: ${this.getSpeed()} km/h`);
+    }
+
+  }
+
+
+  const myBike = new Bike();
+  myBike.setSpeed(-1000)
+  myBike.setSpeed(25)
+
+  myBike.getSpeed();
+  myBike.bikeSpeed();
+
+</script>
+
+</body>
+</html>

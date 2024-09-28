@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+
+  <script>
+
+   class Example {
+
+    constructor (age) {
+      this._age = age; // sets user's age
+    }
+
+    get age() {
+       return this._age;
+     }
+
+     
+     set age(value) {
+       if (value < 0) {
+         console.log("Age cannot be negative.");
+       } else {
+         this._age = value;  // Set age if valid
+       }
+     }
+
+     static isAdult(age) {
+       return age >= 18;  // Check if the age qualifies as an adult
+     }
+} 
+
+   const example = new Example(age);
+
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+</head>
+<body>
+
+  <script>
+    class Book {
+      #numOfPages;
+
+      constructor (title, numOfPages) {
+        this.title = title;
+        this.#numOfPages = numOfPages;
+      }
+
+      get pages() {
+        return this.#numOfPages;
+      }
+
+      set pages(value) {
+        if (value > 0) {
+          this.#numOfPages = value;
+        } else {
+          console.error("Num of pages must be higher than 0");
+        }
+      }
+    }
+
+    const book = new Book("JavaScript ES6", 294);
+
+    console.log(book.pages);
+    console.log(book.title)
+
+  </script>
+  
+</body>
+</html>

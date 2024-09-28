@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+
+  <script>
+    class Rectangle {
+      constructor (width, height) {
+        this.width = width;
+        this.height = height;
+      }
+
+      get calcArea () {
+        return this.width * this.height;
+      }
+
+      set width (value) {
+        if (value > 0) {
+          this._width = value;
+        } else {
+          console.error("Width must be greater than zero");
+          this._width = 0;
+        }
+      }   
+
+      set height (value) {
+        if (value > 0) {
+          this._height = value;
+        } else {
+          console.error("Height must be greater than zero");
+          this._height = 0;
+        }
+      }  
+
+      get width() {
+        return this._width;
+      }
+
+      get height() {
+        return this._height;
+      }
+    }
+
+    const rectangle = new Rectangle(5, 4);
+    const negRectangle = new Rectangle(-3, 4);
+
+    console.log(rectangle.calcArea);
+    console.log(negRectangle.calcArea);
+
+  </script>
+  
+</body>
+</html>

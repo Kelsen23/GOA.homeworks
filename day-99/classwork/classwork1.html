@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+</head>
+<body>
+
+  <input class="js-name" placeholder="Name"></input>
+  <input class="js-surname" placeholder="Surname"></input>
+  <input class="js-age" placeholder="Age"></input>
+  <input class="js-password" placeholder="Password"></input>
+  <button class="js-btn">Register</button>
+
+
+<script>
+    
+class RegistrationPage {
+
+  static userCount = 0;
+
+  #password;
+
+  constructor (name, surname, age, password) {
+    this.name = name;
+    this.surname = surname;
+    this.age = age;
+    this.#password = password;
+    RegistrationPage.userCount ++;
+  }
+
+  showDetailsAboutMe () {
+    return `Name: ${this.name}, Surname: ${this.surname}, Age: ${this.age}`;
+  }
+
+  getUserCount() {
+    return RegistrationPage.userCount;
+  }
+
+  }
+
+document.querySelector('.js-btn').addEventListener('click', () => {
+
+  const name = document.querySelector('.js-name').value;
+  const surname = document.querySelector('.js-surname').value;
+  const age = document.querySelector('.js-age').value;
+  const password = document.querySelector('.js-password').value;
+
+  const registration = new RegistrationPage(name, surname, age, password);
+
+  console.log(`Your name: ${registration.name}`);
+
+});
+    
+</script>
+  
+</body>
+</html>

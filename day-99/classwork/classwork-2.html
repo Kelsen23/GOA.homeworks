@@ -17,7 +17,6 @@
        return this._age;
      }
 
-     
      set age(value) {
        if (value < 0) {
          console.log("Age cannot be negative.");
@@ -27,7 +26,7 @@
      }
 
      static isAdult(age) {
-       return age >= 18;  // Check if the age qualifies as an adult
+       return age >= 18;  // Check if the age is above or equal to 18
      }
 } 
 

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+</head>
+<body>
+
+  <script>
+
+  class Appliance {
+
+    constructor(power) {
+      this._power = power;
+    }
+
+  }
+
+  class WashingMachine extends Appliance {
+    constructor(power, model, make) {
+      super(power);
+      this.model = model;
+      this.make = make;
+    }
+  }
+
+  const washingMachine = new WashingMachine(5000, 'Samsung', 'idk');
+
+  console.log(washingMachine._power, washingMachine.model, washingMachine.make);
+
+
+  </script>
+
+</body>
+</html>

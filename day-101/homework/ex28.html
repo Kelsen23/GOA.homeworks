@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+
+  <script>
+
+    class ShoppingCart {
+
+      constructor (products) {
+          this.products = products;
+      }
+
+      addItem(product, quantity) {
+        this.products.set(product, quantity);
+        console.log(`${product} was added to the cart`);
+      }
+
+      getTotalItems() {
+
+        let totalItems = 0;
+
+        this.products.forEach((quantity, product) => {
+            totalItems += quantity;
+        });
+
+        console.log(`You have total of ${totalItems} items in your cart`);
+      }
+
+    }
+    
+
+   const products = new ShoppingCart(new Map([
+    ['Yogurt', 60], 
+    ['Bread', 101], 
+    ['Eggs', 45]]));
+
+    
+    products.addItem('Sausages', 1);
+    products.getTotalItems();
+
+ 
+
+
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+</head>
+<body>
+
+  <script>
+    class Shape {
+      constructor (sides, name) {
+        this.sides = sides;
+        this.name = name;
+      }
+    }
+
+    class Triangle extends Shape {
+      constructor (sides, name, base, height) {
+        super(sides, name);
+        this.base = base;
+        this.height = height;
+      }
+
+      calculateArea () {
+        console.log(`Triangle's Area is: ${(this.base * this.height) / 2}`);
+      }
+
+    }
+
+    const myTriangle = new Triangle(4, 'triangle', 12, 5);
+
+    myTriangle.calculateArea();
+
+  </script>
+  
+</body>
+</html>

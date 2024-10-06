@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+
+  <script>
+
+    class CountryDirectory {
+      constructor (capitals) {
+          this.capitals = capitals;
+      }
+
+      getCapital(country) {
+        return this.capitals.get(country) || `The country you entered doesn't exist in our list`;
+      }
+
+    }
+    
+
+   const capitals = new CountryDirectory(new Map([
+    ['Germany', 'Berlin'], 
+    ['UK', 'London'], 
+    ['Ireland', 'Dublin']]));
+
+    console.log(capitals.getCapital('Ireland'));
+
+ 
+
+
+  </script>
+  
+</body>
+</html>

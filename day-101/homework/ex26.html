@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+
+  <script>
+
+    class Classroom {
+      constructor () {
+          this.items = new Map([['Bob', 2], ['Eric', 5], ['Henry', 9]]);
+      }
+
+      addStudent(name, score) {
+        this.items.set(name, score);
+        console.log(`${name} with ${score} score was added to the class`)
+      }
+
+      getAveregeScore() {
+
+        let averegeScore = 0;
+
+        this.items.forEach((score, name) => {
+          averegeScore += score;
+        })
+
+        return averegeScore / this.items.size;
+      }
+
+    }
+    
+
+   const classroom = new Classroom();
+
+   classroom.addStudent('Luka', 10);
+   console.log(classroom.getAveregeScore());
+
+
+  </script>
+  
+</body>
+</html>

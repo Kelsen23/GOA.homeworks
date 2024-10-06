@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+
+  <script>
+
+    class Inventory {
+      constructor () {
+          this.items = new Map([['Sword', 3], ['Arrows', 52], ['Axe', 5]]);
+      }
+    }
+
+    class StoreInventory extends Inventory {
+      constructor() {
+        super();
+      }
+
+      getStock(item) {
+        if (this.items.has(item)) {
+          return `${item} is in stock`;
+        } else {
+          return `${item} is not available in stock.`;
+        }
+      }
+
+    }
+    
+
+   const storeInventory = new StoreInventory();
+
+   console.log(storeInventory.getStock('Sword'));
+
+
+  </script>
+  
+</body>
+</html>

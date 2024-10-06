@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+</head>
+<body>
+
+  <script>
+
+  const products = new Map([['Milk', 5.50], ['Bread', 3.50], ['Eggs', 4.50]]);;
+
+  function deleteMilk() {
+    products.delete('Milk');
+    console.log(`Milk has been deleted`);
+  }
+
+  deleteMilk();
+  console.log(products);
+
+  </script>
+
+</body>
+</html>

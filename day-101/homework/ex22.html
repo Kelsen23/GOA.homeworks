@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+</head>
+<body>
+
+  <script>
+
+    class Store {
+      constructor () {
+        this.products = new Map([['Milk', 5.00], ['Orange', 2.00], ['Bread', 3.50]]);
+      }
+
+      getPrice(product) {
+        return this.products.get(product) || `Product you entered doesn't exist`;
+      }
+
+    }
+
+    const store = new Store();
+
+    console.log(`It costs: ${store.getPrice('Bread')} GEL`);
+
+  </script>
+  
+</body>
+</html>

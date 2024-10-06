@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+</head>
+<body>
+
+  <script>
+
+  const animals = new Map([['Lion', 'Savannah'], ['Wolf', 'Forest'], ['Polar Bear', 'Arctic']]);
+
+    function findAnimalsHabitat(habitat) {
+      const animalsInHabitat = [];
+
+      for (const [animal, animalHabitat] of animals) {
+        if (animalHabitat === habitat) {
+          animalsInHabitat.push(animal);
+        }
+      }
+
+      return animalsInHabitat;
+    }
+
+    console.log(findAnimalsHabitat('Arctic'));
+
+  </script>
+
+</body>
+</html>

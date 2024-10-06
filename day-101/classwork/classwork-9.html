@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+</head>
+<body>
+
+  <script>
+
+  const cars = new Map();
+
+  function addCar(brand, model) {
+      cars.set(brand, model);
+      console.log(`${brand} ${model} was added`);
+  }
+
+  addCar('Toyota', 'Camry');
+  addCar('Honda', 'Civic');
+  addCar('Ford', 'Mustang');
+
+  console.log('Cars in the map:', cars);
+  cars.clear();
+  console.log('Cars in the map:', cars);
+
+  </script>
+  
+</body>
+</html>

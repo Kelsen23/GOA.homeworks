@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+</head>
+<body>
+
+  <script>
+
+  class Product {
+
+    constructor(name, price) {
+      this.name= name;
+      this.price = price;
+    }
+
+    get price() {
+      return this._price;
+    }
+
+    set price(value) {
+      if (value < 0) {
+        console.error("Invalid price");
+      } 
+      this._price = value;
+    }
+
+  }
+
+
+    const product = new Product('Milk', 4.55);
+
+    console.log(product.price);
+   
+  </script>
+
+</body>
+</html>

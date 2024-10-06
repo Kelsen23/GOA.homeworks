@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+
+  <script>
+
+    class RestaurantMenu {
+
+      constructor (menu) {
+        this.menu = menu;
+      }
+
+      getItemPrice(item) {
+        const price = this.menu.get(item);
+        console.log(`price of ${item} is: ------- ${price} GEL`)
+      } 
+
+    }
+    
+
+   const restaurantMenu = new RestaurantMenu(new Map([
+    ['Ajaruli Khachapuri', 28.00], 
+    ['khinkali', 2.50], 
+    ['Mtsvadi', 18.95]]));
+    
+    restaurantMenu.getItemPrice('khinkali');
+
+  </script>
+  
+</body>
+</html>

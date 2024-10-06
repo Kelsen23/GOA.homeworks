@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+</head>
+<body>
+
+  <script>
+
+  class Person {
+
+    constructor(name, age) {
+      this.name= name;
+      this.age = age;
+    }
+
+  }
+
+  class Student extends Person {
+    constructor(name, age, studentID) {
+      super(name, age);
+      this.studentID = studentID;
+    }
+
+  }
+
+  const student = new Student("Boba", 14, 2323);
+
+  console.log(student);
+
+
+  </script>
+
+</body>
+</html>

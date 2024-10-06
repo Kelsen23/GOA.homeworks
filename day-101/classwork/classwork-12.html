@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+</head>
+<body>
+
+  <script>
+
+  const countries = new Map();
+
+  function addCountry(code, name) {
+      countries.set(code, name);
+  }
+
+  addCountry('US', 'United States');
+  addCountry('GE', 'Georgia');
+
+  const countryCodes = countries.keys();
+
+  for (let code of countryCodes) {
+      console.log(code);
+  }
+
+  function values() {
+    const countryNames = countries.values();
+    for (let name of countryNames) {
+      console.log(name);
+    }
+  }
+
+  values();
+
+  </script>
+  
+</body>
+</html>

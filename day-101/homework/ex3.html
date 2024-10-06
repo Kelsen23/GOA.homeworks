@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+</head>
+<body>
+
+  <script>
+
+  class User {
+    constructor(name, email) {
+      this.name= name;
+      this.email = email;
+    }
+
+    displayInfo() {
+      console.log(`Name: ${this.name}, Email: ${this.email}`);
+    }
+
+    static compareUsers(user1, user2) {
+      console.log(`user1 name: ${user1.email}, user2 name: ${user2.email}`)
+    }
+
+  }
+
+
+    const user1 = new User("Elon Musk", "ElonMusk@gmail.com");
+    const user2 = new User("Jeff Bezos", "JeffBez@gmail.com");
+
+    user1.displayInfo();
+
+   User.compareUsers(user1, user2);
+   
+  </script>
+
+</body>
+</html>

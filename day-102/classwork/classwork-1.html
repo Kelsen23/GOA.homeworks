@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+</head>
+<body>
+
+  <script>
+    const strings = ["apple", "banana", "watermelon"];
+
+    const map = new Map();
+    strings.forEach(str => map.set(str, str.length));
+
+    const uniqueLengths = [...new Set(map.values())];
+
+    const sumOfUniqueLengths = uniqueLengths.reduce((acc, length) => acc + length, 0);
+
+    console.log(sumOfUniqueLengths);
+
+  </script>
+  
+</body>
+</html>

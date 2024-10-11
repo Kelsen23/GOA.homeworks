@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+</head>
+<body>
+
+  <script>
+
+   const map = new Map([['milk', 3.50], ['bread', 4.00]]);
+
+   function increasePrice(product) {
+      if (map.has(product)) {
+        const currentPrice = map.get(product);
+        const newPrice = currentPrice + (currentPrice * 10 / 100);
+        map.set(product, newPrice);
+        return `${product} price increased to $${newPrice.toFixed(2)}`;
+      }
+    }
+
+    console.log(increasePrice('milk'));
+  
+
+
+  </script>
+  
+</body>
+</html> 

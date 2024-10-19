@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+
+  <input class="userName">
+  <button class="btn">Search</button>
+  <p class="login"></p>
+  <p class="bio"></p>
+  <p class="followers"></p>
+  <a class="link" style="display: none;">View Profile</a>
+  <img class="avatar" style="display: none; width: 100px; height: auto;">
+
+  <script>
+
+  const btn = document.querySelector('.btn');
+
+  btn.addEventListener("click", () => {
+    const userName = document.querySelector('.userName').value;
+
+    const request = fetch(`https://api.github.com/users/${userName}`);
+
+    request
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("User not found");
+        }
+        return response.json();
+      })
+      .then(data => {
+        document.querySelector('.login').innerText = data.login;
+        document.querySelector('.bio').innerText = data.bio || 'No bio available';
+        document.querySelector('.followers').innerText = ` followers: ${data.followers}` || '0 followers';
+        const link = document.querySelector('.link');
+        link.href = data.html_url;
+        link.style.display = 'block'; 
+
+        const avatar = document.querySelector('.avatar');
+        avatar.src = data.avatar_url;
+        avatar.style.display = 'block'; 
+      })
+      .catch(error => alert("Something went wrong: " + error.message));
+  });
+
+   
+    
+
+  </script>
+  
+</body>
+</html>

@@ -34,6 +34,12 @@
       request
         .then(response => response.json())
         .then(data => {
+
+          if (data.Response === 'False') {
+            alert(data.Error);
+            return;
+          }
+
           document.querySelector('.title').innerText = `Movie Name: ${data.Title}`;
           document.querySelector('.year').innerText = `Release Year: ${data.Year}`;
           document.querySelector('.production').innerText = `Production: ${data.Production}`;
@@ -51,7 +57,7 @@
           poster.src = data.Poster;
           poster.style.display = 'block';
         })
-        .catch(error => alert(error));
+        .catch(error => alert("Something went wrong: " + error.message));
 
     })  
 

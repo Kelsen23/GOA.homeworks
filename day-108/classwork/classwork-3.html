@@ -8,60 +8,9 @@
   <input class="movieName">
   <button class="btn">Search</button>
 
-  <p class="title"></p>
-  <p class="year"></p>
-  <p class="production"></p>
-  <p class="rating"></p>
-  <p class="genre"></p>
-  <p class="country"></p>
-  <p class="awards"></p>
-  <p class="runtime"></p>
-  <p class="actors"></p>
-  <p class="plot"></p>
-  <p class="director"></p>
-  <p class="writer"></p>
+  <main></main>
 
-  <img class="poster" style="display: none; width: 300px; height: auto;">
-
-  <script>
-    const btn = document.querySelector('.btn');
-
-    btn.addEventListener('click', () => {
-      const movieTitle = document.querySelector('.movieName').value;
-      const APIKey = 'ef5fa30d'
-      const request = fetch(`http://www.omdbapi.com/?t=${encodeURIComponent(movieTitle)}&apikey=${APIKey}`);
-
-      request
-        .then(response => response.json())
-        .then(data => {
-
-          if (data.Response === 'False') {
-            alert(data.Error);
-            return;
-          }
-
-          document.querySelector('.title').innerText = `Movie Name: ${data.Title}`;
-          document.querySelector('.year').innerText = `Release Year: ${data.Year}`;
-          document.querySelector('.production').innerText = `Production: ${data.Production}`;
-          document.querySelector('.rating').innerText = `Rated: ${data.Rated}`;
-          document.querySelector('.genre').innerText = `Genre: ${data.Genre}`;
-          document.querySelector('.country').innerText = `Country: ${data.Country}`;
-          document.querySelector('.awards').innerText = `Awards: ${data.Awards}`;
-          document.querySelector('.runtime').innerText = `Runtime: ${data.Runtime}`;
-          document.querySelector('.actors').innerText = `Actors: ${data.Actors}`;
-          document.querySelector('.plot').innerText = `Plot: ${data.Plot}`;
-          document.querySelector('.director').innerText = `Director: ${data.Director}`;
-          document.querySelector('.writer').innerText = `Writer(s): ${data.Writer}`;
-
-          const poster = document.querySelector('.poster');
-          poster.src = data.Poster;
-          poster.style.display = 'block';
-        })
-        .catch(error => alert("Something went wrong: " + error.message));
-
-    })  
-
-  </script>
+  <script src="classwork-3.js"></script>
   
 </body>
 </html>

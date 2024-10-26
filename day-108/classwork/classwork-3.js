@@ -36,7 +36,7 @@
           <p>Writer(s): ${data.Writer}</p>`
         
       } catch(error) {
-        alert('Somethin went wrong:', error);
+        alert('Something went wrong:', error);
       }
   
   }

@@ -1,0 +1,32 @@
+.product-image {
+  height: 220px;
+  width: 250px;
+  border-radius: 2px;
+}
+
+.products-container {
+  position: relative;
+  left: 20px;
+  top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 60px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  width: 250px;
+  height: 400px;
+  background-color: rgba(255, 255, 254, 0.5);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.price {
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+

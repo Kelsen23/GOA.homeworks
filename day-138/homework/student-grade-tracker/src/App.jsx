@@ -1,9 +1,9 @@
-import Gradetracker from "./components/Gradetracker.jsx"
+import GradeTracker from "./components/Gradetracker.jsx";
 
 const App = () => {
   return (
     <div>
-      <Gradetracker />
+      <GradeTracker />
     </div>
   )
 }

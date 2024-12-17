@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Gradetracker = () => {
+const GradeTracker = () => {
 
   const [studentData, setStudentData] = useState([]);
   const [studentName, setStudentName] = useState('');
@@ -71,4 +71,4 @@ const Gradetracker = () => {
   )
 }
 
-export default Gradetracker
+export default GradeTracker

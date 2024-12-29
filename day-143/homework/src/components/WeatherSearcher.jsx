@@ -4,6 +4,7 @@ const WeatherSearcher = () => {
 
   const [inputValue, setInputValue] = useState('');
   const [weatherData, setWeatherData] = useState(null);
+  const [isCelsius, setIsCelsius] = useState(true);
 
   const fetchData = async () => {
 
@@ -38,6 +39,20 @@ const WeatherSearcher = () => {
     fetchData();
   }, [inputValue]);
 
+  const switchToF = () => {
+    if (isCelsius) {
+      Math.round(weatherData.main.temp = (9 / 5 * weatherData.main.temp) + 32);
+      setIsCelsius(false);
+    }
+  }
+
+  const switchToC = () => {
+    if (!isCelsius) {
+      Math.round(weatherData.main.temp = (weatherData.main.temp - 32) * 5 / 9);
+      setIsCelsius(true);
+    }
+  }
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -49,8 +64,8 @@ const WeatherSearcher = () => {
       <div>
         <h1>{weatherData.name}</h1>
         <h2>{weatherData.weather[0].main}</h2>
-        <p>Description: {weatherData.weather[0].description}</p>
-        <p>Temperature: {weatherData.main.temp}°C</p>
+        <p>Description: {weatherData.weather[0].description} </p>
+        <p>Temperature: {weatherData.main.temp} {isCelsius ? "°C" : "°F"} <button onClick={switchToF}>Farhenheit</button> <button onClick={switchToC}>Celsius</button></p>
         <p>Humidity: {weatherData.main.humidity}%</p>
       </div>
     ) : (

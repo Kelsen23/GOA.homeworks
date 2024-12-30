@@ -3,13 +3,14 @@ import React, { useEffect, useState } from 'react'
 const Timer = () => {
 
   const [inputValue, setInputValue] = useState('');
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(JSON.parse(localStorage.getItem("counter")) || 0);
   const [intervalId, setIntervalId] = useState(null);
   const [stopped, setStopped] = useState(null);
 
   const handleSubmit = e => {
     e.preventDefault();
     setCounter(Number(inputValue));
+    setInputValue('');
 
     if (intervalId) {
       clearInterval(intervalId);
@@ -60,13 +61,18 @@ const Timer = () => {
         clearInterval(intervalId);
       }
     };
-  }, [intervalId])
+  }, [intervalId]);
+
+
+  useEffect(() => {
+    localStorage.setItem("counter", JSON.stringify(counter));
+  }, [counter])
   
   return (
     <div>
       <div>
         <form onSubmit={handleSubmit}>
-          <input type="number" value={inputValue} onChange={e => setInputValue(e.target.value)} min={1} required />
+          <input type="number" value={inputValue} placeholder='Enter Seconds' onChange={e => setInputValue(e.target.value)} min={1} required />
           <button type='submit'>Submit</button>
         </form>
 

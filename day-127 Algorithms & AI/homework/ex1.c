@@ -1,0 +1,1 @@
+// No homework here on this day

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import "./BookLibrary.css"
 
 const BookLibrary = () => {
 
@@ -9,8 +10,8 @@ const BookLibrary = () => {
     const aboutBook = books.map(book => ({
       title: book.volumeInfo.title || 'No Title Available',
       description: book.volumeInfo.description || 'No Description Available',
-      image: book.volumeInfo.imageLinks?.thumbnail || 'https://via.placeholder.com/150',
-      authors: book.volumeInfo.authors?.join(', ') || 'Unknown Author',
+      image: book.volumeInfo.imageLinks?.thumbnail,
+      authors: book.volumeInfo.authors?.join(', ') || 'N/A',
     }))
     setData(aboutBook);
   }
@@ -33,14 +34,19 @@ const BookLibrary = () => {
     <div>
       <input type="text" placeholder='Type In The Name of Book' onChange={e => setSearchTerm(e.target.value)} />
 
-      <div>
+      <div className='books-container'>
        {data.length > 0 ? (data.map((book, index) => {
         return (
-          <div key={index}>
-            <h2>{book.title}</h2>
-            <img src={book.image} style={{ width: '150px' }} />
-            <p><strong>Author(s):</strong> {book.authors}</p>
-            <p><strong>Description:</strong> {book.description}</p>
+          <div key={index} className='book-container'>
+            <div className='title-container'>
+              <h2 className='book-title'>{book.title}</h2>
+            </div>
+
+            <div className='book-info-container'>
+              <img src={book.image} style={{ width: '150px' }} className='book-img' />
+              <p className='author'><strong>Author(s):</strong> {book.authors}</p>
+              <p className='description'><strong>Description:</strong> {book.description}</p>
+            </div>
           </div>
         )
        })) : (

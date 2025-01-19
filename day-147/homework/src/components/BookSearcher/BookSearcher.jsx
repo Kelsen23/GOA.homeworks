@@ -5,6 +5,7 @@ import { MdOutlineStarPurple500, MdStarPurple500 } from "react-icons/md";
 const BookSearcher = ({ library, setLibrary, favorites, setFavorites }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [data, setData] = useState([]);
+
   const [favoritedBooks, setFavoritedBooks] = useState({});
 
   const renderData = (books) => {
@@ -33,6 +34,14 @@ const BookSearcher = ({ library, setLibrary, favorites, setFavorites }) => {
     fetchBookData();
   }, [searchTerm]);
 
+  useEffect(() => {
+    const initialFavoritedBooks = favorites.reduce((acc, book) => {
+      acc[book.title] = true; 
+      return acc;
+    }, {});
+    setFavoritedBooks(initialFavoritedBooks);
+  }, [favorites]);
+
   const addToLibrary = (book) => {
     if (!library.some((item) => item.title === book.title)) {
       setLibrary((prevLibrary) => [...prevLibrary, book]);
@@ -41,14 +50,15 @@ const BookSearcher = ({ library, setLibrary, favorites, setFavorites }) => {
 
   const addToFavorites = (book) => {
     const isFavorited = favoritedBooks[book.title];
-    setFavoritedBooks({ ...favoritedBooks, [book.title]: !isFavorited });
 
     if (!isFavorited) {
       setFavorites((prevFavorites) => [...prevFavorites, book]);
+      setFavoritedBooks((prev) => ({ ...prev, [book.title]: true }));
     } else {
       setFavorites((prevFavorites) =>
         prevFavorites.filter((item) => item.title !== book.title)
       );
+      setFavoritedBooks((prev) => ({ ...prev, [book.title]: false }));
     }
   };
 
@@ -65,7 +75,10 @@ const BookSearcher = ({ library, setLibrary, favorites, setFavorites }) => {
       />
 
       <div className="books-container">
-        {data.length > 0 ? data.map((book, index) => {
+        {data.length > 0
+          ? data.map((book, index) => {
+              const isFavorited = favoritedBooks[book.title];
+
               return (
                 <div key={index} className="book-container">
                   <div className="title-container">
@@ -87,14 +100,23 @@ const BookSearcher = ({ library, setLibrary, favorites, setFavorites }) => {
                   </div>
 
                   <div className="btn-container">
-                    <button className="addToLibrary-btn" onClick={() => addToLibrary(book)}>
+                    <button
+                      className="addToLibrary-btn"
+                      onClick={() => addToLibrary(book)}
+                    >
                       Add To Library
                     </button>
-                    {favoritedBooks[book.title] ? (
-                      <MdStarPurple500 className="favorite-btn" onClick={() => addToFavorites(book)} color="red"
+                    {isFavorited ? (
+                      <MdStarPurple500
+                        className="favorite-btn"
+                        onClick={() => addToFavorites(book)}
+                        color="red"
                       />
                     ) : (
-                      <MdOutlineStarPurple500 className="favorite-btn" onClick={() => addToFavorites(book)}color="gray"
+                      <MdOutlineStarPurple500
+                        className="favorite-btn"
+                        onClick={() => addToFavorites(book)}
+                        color="gray"
                       />
                     )}
                   </div>

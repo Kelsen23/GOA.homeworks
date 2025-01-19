@@ -62,7 +62,6 @@ input[type="text"] {
   text-overflow: ellipsis; 
 }
 
-
 .book-info-container {
   display: flex;
   flex-direction: column;
@@ -112,13 +111,13 @@ button {
 }
 
 .addToLibrary-btn {
-  background-color: #3498db;
+  background-color: #2c3e50;
   color: white;
   margin: 5px 0;
 }
 
 .addToLibrary-btn:hover {
-  background-color: #2980b9;
+  background-color:rgb(65, 92, 119);
   transform: translateY(-2px);
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
 }
@@ -129,7 +128,7 @@ button {
 
 .favorite-btn {
   font-size: 30px;
-  color:rgb(219, 207, 206);
+  color: rgb(219, 207, 206);
   margin: 5px 0;
   cursor: pointer;
   transition: color 0.3s ease, transform 0.2s ease;
@@ -156,17 +155,47 @@ button {
   input[type="text"] {
     width: calc(100% - 30px);
     margin: 15px;
+    font-size: 12px; 
+  }
+
+  .books-container {
+    gap: 8px;
+    padding: 10px;
   }
 
   .book-container {
     padding: 8px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
   }
 
   .book-title {
     font-size: 12px;
   }
 
-  .author, .description {
+  .book-img {
+    height: 180px; 
+  }
+
+  .author,
+  .description {
     font-size: 9px;
+    margin: 2px 0; 
+  }
+
+  button {
+    padding: 6px 10px;
+    font-size: 11px; 
+  }
+
+  .addToLibrary-btn {
+    margin: 4px 0;
+  }
+
+  .favorite-btn {
+    font-size: 25px; 
+  }
+
+  .btn-container {
+    gap: 5px; 
   }
 }

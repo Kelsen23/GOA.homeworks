@@ -2,6 +2,7 @@ import { useState } from "react"
 import BookSearcher from "./components/BookSearcher/BookSearcher"
 import Nav from "./components/Nav/Nav"
 import MyLibrary from "./components/myLibrary/MyLibrary"
+import Favorites from "./components/myFavorites/Favorites"
 
 const App = () => {
 
@@ -14,6 +15,7 @@ const App = () => {
       <Nav setSector={setSector} />
       {sector === "Search The Book" && <BookSearcher library={library} setLibrary={setLibrary} favorites={favorites} setFavorites={setFavorites}   />}
       {sector === "My Library" && <MyLibrary library={library} setLibrary={setLibrary} />}
+      {sector === "My Favorite Books" && <Favorites favorites={favorites} setFavorites={setFavorites} />}
     </div>
   )
 }

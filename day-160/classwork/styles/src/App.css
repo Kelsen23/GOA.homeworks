@@ -1,0 +1,15 @@
+
+.Hello {
+  background-color: orange;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  width: 150px;
+  transition: 1s;
+  transform: ease-out
+}
+
+.Hello:hover {
+  background-color: black;
+  color: orange;
+}

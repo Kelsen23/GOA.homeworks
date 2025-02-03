@@ -32,7 +32,7 @@ const TaskManager = ({ setIsLoggedIn }) => {
 
     if (!updatedTask) return;
 
-    setTaskList((prevTasks) => prevTasks.map((task, i) => (i === index ? updatedTask : task)));
+    setTaskList(prevTasks => prevTasks.map((task, i) => (i === index ? updatedTask : task)));
     setIsEditing(null);
   };
 

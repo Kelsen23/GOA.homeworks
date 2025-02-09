@@ -10,7 +10,7 @@ const LoginForm = ({ accounts, setIsLoggedIn }) => {
 
   const [error, setError] = useState("");
 
-  const handleLogIn = (e) => {
+  const handleLogIn = e => {
     e.preventDefault();
     if (
       accounts.some(

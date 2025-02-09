@@ -11,15 +11,15 @@ const RegisterForm = ({ isLoggedIn, setIsLoggedIn, accounts, setAccounts }) => {
 
   const [error, setError] = useState("");
 
-  const handleRegister = (e) => {
+  const handleRegister = e => {
     e.preventDefault();
 
-    if (accounts.some((account) => account.email === formData.email)) {
+    if (accounts.some(account => account.email === formData.email)) {
       setError("Account with this email already exists");
       return;
     }
 
-    setAccounts((prev) => [
+    setAccounts(prev => [
       ...prev,
       {
         name: formData.name,

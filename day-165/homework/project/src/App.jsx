@@ -14,7 +14,6 @@ const App = () => {
     if (inputValue !== "") {
       const res = await fetch(`https://api.github.com/users/${inputValue}`);
       const data = await res.json();
-      console.log(data);
       setUser({
         username: data.login,
         bio: data.bio,
@@ -29,6 +28,7 @@ const App = () => {
         blog: data.blog,
         company: data.company,
       });
+      setInputValue("");
     }
   };
 

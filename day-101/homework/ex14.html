@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- 
-</head>
-<body>
+  <head> </head>
+  <body>
+    <script>
+      const prices = new Map([
+        ["Milk", 5.5],
+        ["Bread", 3.5],
+        ["Cheese", 9.0],
+      ]);
+      const amounts = new Map([
+        ["Milk", 75],
+        ["Bread", 100],
+        ["Cheese", 40],
+      ]);
 
-  <script>
+      let totalPrices = new Map();
 
-  const prices = new Map([['Milk', 5.5], ['Bread', 3.5], ['Cheese', 9.00]]);
-  const amounts = new Map([['Milk', 75], ['Bread', 100], ['Cheese', 40]]);
+      prices.forEach((price, product) => {
+        const quantity = amounts.get(product) || 0;
+        const totalPrice = quantity * price;
+        totalPrices.set(product, totalPrice);
+      });
 
-  let totalPrices = new Map();
-
-  prices.forEach((price, product) => {
-    const quantity = amounts.get(product) || 0;
-    const totalPrice = quantity * price;
-    totalPrices.set(product, totalPrice);
-  });
-
-  totalPrices.forEach((totalPrice, product) => {
-    console.log(`${product} => ${totalPrice}`);
-  })
-
-
-
-  </script>
-
-</body>
+      totalPrices.forEach((totalPrice, product) => {
+        console.log(`${product} => ${totalPrice}`);
+      });
+    </script>
+  </body>
 </html>

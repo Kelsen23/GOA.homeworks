@@ -1,56 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  
-</head>
-<body>
+  <head> </head>
+  <body>
+    <script>
+      class Appliance {
+        constructor(brand, power) {
+          this.brand = brand;
+          this.power = power;
+        }
 
-  <script>
-    
-class Appliance {
-    constructor(brand, power) {
-        this.brand = brand;
-        this.power = power;
-    }
+        turnOn() {
+          console.log("The appliance is now on.");
+        }
+      }
 
-    turnOn() {
-        console.log('The appliance is now on.');
-    }
-}
+      class WashingMachine extends Appliance {
+        washClothes() {
+          console.log("The washing machine is now washing clothes.");
+        }
 
-class WashingMachine extends Appliance {
+        test() {
+          this.turnOn();
+          this.washClothes();
+        }
+      }
 
-    washClothes() {
-        console.log('The washing machine is now washing clothes.');
-    }
+      class Microwave extends Appliance {
+        heatFood() {
+          console.log("The microwave is now heating food.");
+        }
 
-    test() {
-        this.turnOn();
-        this.washClothes();
-    }
-}
+        test() {
+          this.turnOn();
+          this.heatFood();
+        }
+      }
 
-class Microwave extends Appliance {
+      const myWashingMachine = new WashingMachine("Apple", "idk");
+      const myMicrowave = new Microwave("Samsung", "idk");
 
-    heatFood() {
-        console.log('The microwave is now heating food.');
-    }
-
-    test() {
-        this.turnOn(); 
-        this.heatFood();
-    }
-}
-
-  const myWashingMachine = new WashingMachine('Apple', 'idk');
-  const myMicrowave = new Microwave('Samsung', 'idk');
-
-  myWashingMachine.test();
-  myMicrowave.test();
-
-  </script>
-
-
-
-</body>
+      myWashingMachine.test();
+      myMicrowave.test();
+    </script>
+  </body>
 </html>

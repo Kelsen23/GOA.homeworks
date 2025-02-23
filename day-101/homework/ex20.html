@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- 
-</head>
-<body>
+  <head> </head>
+  <body>
+    <script>
+      const students = new Map([
+        ["Bob", 8],
+        ["Bobba", 10],
+        ["Juba", 9],
+      ]);
 
-  <script>
+      scores = [];
+      const values = students.values();
 
-  const students = new Map([['Bob', 8], ['Bobba', 10], ['Juba', 9]]);
+      for (const value of values) {
+        scores.push(value);
+      }
 
-  scores = [];
-  const values = students.values();
-
-  for (const value of values) {
-    scores.push(value);
-  }
-
-  console.log(scores);
-
-  </script>
-
-</body>
+      console.log(scores);
+    </script>
+  </body>
 </html>

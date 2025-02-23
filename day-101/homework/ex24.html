@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
-</head>
-<body>
-
-  <script>
-
-    class Zoo {
-      constructor (animals) {
+  <head> </head>
+  <body>
+    <script>
+      class Zoo {
+        constructor(animals) {
           this.animals = animals;
+        }
+
+        listAnimals() {
+          const animalList = [];
+          this.animals.forEach((amount, name) => {
+            animalList.push(name);
+          });
+          return animalList || "There is no animals in the zoo right now.";
+        }
       }
 
-      listAnimals() {
-        const animalList = [];
-        this.animals.forEach((amount, name) => {
-          animalList.push(name);
-        });
-        return animalList || 'There is no animals in the zoo right now.';
-      }
+      const zoo = new Zoo(
+        new Map([
+          ["Tiger", 30],
+          ["Zebra", 55],
+          ["Monkey", 67],
+        ])
+      );
 
-    }
-
-    const zoo = new Zoo(new Map([['Tiger', 30], ['Zebra', 55], ['Monkey', 67]]));
-
-    console.log(zoo.listAnimals());
-
-
-  </script>
-  
-</body>
+      console.log(zoo.listAnimals());
+    </script>
+  </body>
 </html>

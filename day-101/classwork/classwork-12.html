@@ -1,37 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  
-</head>
-<body>
+  <head> </head>
+  <body>
+    <script>
+      const countries = new Map();
 
-  <script>
+      function addCountry(code, name) {
+        countries.set(code, name);
+      }
 
-  const countries = new Map();
+      addCountry("US", "United States");
+      addCountry("GE", "Georgia");
 
-  function addCountry(code, name) {
-      countries.set(code, name);
-  }
+      const countryCodes = countries.keys();
 
-  addCountry('US', 'United States');
-  addCountry('GE', 'Georgia');
+      for (let code of countryCodes) {
+        console.log(code);
+      }
 
-  const countryCodes = countries.keys();
+      function values() {
+        const countryNames = countries.values();
+        for (let name of countryNames) {
+          console.log(name);
+        }
+      }
 
-  for (let code of countryCodes) {
-      console.log(code);
-  }
-
-  function values() {
-    const countryNames = countries.values();
-    for (let name of countryNames) {
-      console.log(name);
-    }
-  }
-
-  values();
-
-  </script>
-  
-</body>
+      values();
+    </script>
+  </body>
 </html>

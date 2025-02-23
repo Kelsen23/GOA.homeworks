@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- 
-</head>
-<body>
+  <head> </head>
+  <body>
+    <script>
+      const curencies = new Map([
+        ["USD", "Dollar"],
+        ["EUR", "Euro"],
+        ["GEL", "Lari"],
+      ]);
 
-  <script>
-
-  const curencies = new Map([['USD', 'Dollar'], ['EUR', 'Euro'], ['GEL', 'Lari']]);
-
-  for (const [code, name] of curencies) {
-    console.log(`${code} => ${name}`);
-  }
-
-
-  </script>
-
-</body>
+      for (const [code, name] of curencies) {
+        console.log(`${code} => ${name}`);
+      }
+    </script>
+  </body>
 </html>

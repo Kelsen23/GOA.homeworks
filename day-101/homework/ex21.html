@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  
-</head>
-<body>
+  <head> </head>
+  <body>
+    <script>
+      class Library {
+        constructor() {
+          this.books = new Map();
+        }
 
-  <script>
-
-    class Library {
-      constructor () {
-        this.books = new Map();
+        addBook(title, author) {
+          this.books.set(title, author);
+          console.log(this.books);
+        }
       }
 
-      addBook(title, author) {
-        this.books.set(title, author);
-        console.log(this.books);
-      }
+      const library = new Library();
 
-    }
-
-    const library = new Library();
-
-    library.addBook('The Great Gatsby', 'Fitzgerald');
-
-  </script>
-  
-</body>
+      library.addBook("The Great Gatsby", "Fitzgerald");
+    </script>
+  </body>
 </html>

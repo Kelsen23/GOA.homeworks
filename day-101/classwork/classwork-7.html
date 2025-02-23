@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head> </head>
+  <body>
+    <script>
+      const movies = new Map([
+        ["movie1", 1998],
+        ["movie2", 2003],
+      ]);
 
-</head>
-<body>
-
-  <script>
-    const movies = new Map([["movie1", 1998], ["movie2", 2003]]);
-
-    if (movies.has("movie3")) {
-      console.log(`This movie exists`)
-    } else {
-      console.log(`This movie doesn't exists`);
-    }
-
-  </script>
-  
-</body>
+      if (movies.has("movie3")) {
+        console.log(`This movie exists`);
+      } else {
+        console.log(`This movie doesn't exists`);
+      }
+    </script>
+  </body>
 </html>

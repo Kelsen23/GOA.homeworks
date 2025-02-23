@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- 
-</head>
-<body>
+  <head> </head>
+  <body>
+    <script>
+      const products = new Map([
+        ["Milk", 5.5],
+        ["Bread", 3.5],
+        ["Eggs", 4.5],
+      ]);
 
-  <script>
+      function deleteMilk() {
+        products.delete("Milk");
+        console.log(`Milk has been deleted`);
+      }
 
-  const products = new Map([['Milk', 5.50], ['Bread', 3.50], ['Eggs', 4.50]]);;
-
-  function deleteMilk() {
-    products.delete('Milk');
-    console.log(`Milk has been deleted`);
-  }
-
-  deleteMilk();
-  console.log(products);
-
-  </script>
-
-</body>
+      deleteMilk();
+      console.log(products);
+    </script>
+  </body>
 </html>

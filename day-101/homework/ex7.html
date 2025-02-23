@@ -1,38 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- 
-</head>
-<body>
+  <head> </head>
+  <body>
+    <script>
+      class BankAccount {
+        constructor(balance) {
+          this._balance = balance;
+        }
 
-  <script>
+        deposit(amount) {
+          this._balance += amount;
+          console.log(this._balance);
+        }
 
-  class BankAccount {
+        withdraw(amount) {
+          this._balance -= amount;
+          console.log(this._balance);
+        }
+      }
 
-    constructor(balance) {
-      this._balance = balance;
-      
-    }
+      const account1 = new BankAccount(25000);
 
-    deposit(amount) {
-      this._balance += amount;
-      console.log(this._balance)
-    }
-
-    withdraw(amount) {
-      this._balance -= amount;
-      console.log(this._balance)
-    }
-
-  }
-
-  const account1 = new BankAccount(25000);
-
-  account1.deposit(5000);
-  account1.withdraw(2000);
-
-
-  </script>
-
-</body>
+      account1.deposit(5000);
+      account1.withdraw(2000);
+    </script>
+  </body>
 </html>

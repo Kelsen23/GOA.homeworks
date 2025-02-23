@@ -1,49 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head> </head>
+  <body>
+    <script>
+      class PhoneBook {
+        constructor() {
+          this.numsAndNames = new Map([
+            ["Misha", 995934934322],
+            ["Soso", 9957877878123],
+            ["Vaso", 1212129000],
+          ]);
+        }
 
-</head>
-<body>
+        addContact(name, phone) {
+          this.numsAndNames.set(name, phone);
+          return this.numsAndNames;
+        }
 
-  <script>
+        getContact(phone) {
+          let found = false;
 
-    class PhoneBook {
-      constructor() {
-        this.numsAndNames = new Map([
-          ['Misha', 995934934322],
-          ['Soso', 9957877878123],
-          ['Vaso', 1212129000]
-        ]);
-      }
+          this.numsAndNames.forEach((userPhone, userName) => {
+            if (phone === userPhone) {
+              console.log(`This phone's patroni is: ${userName}.`);
+              found = true;
+            }
+          });
 
-      addContact(name, phone) {
-        this.numsAndNames.set(name, phone);
-        return this.numsAndNames;
-      }
-
-      getContact(phone) {
-        let found = false;
-
-        this.numsAndNames.forEach((userPhone, userName) => {
-          if (phone === userPhone) {
-            console.log(`This phone's patroni is: ${userName}.`);
-            found = true;
+          if (!found) {
+            console.log(`This phone's patroni doesn't exist.`);
           }
-        });
-
-        if (!found) {
-          console.log(`This phone's patroni doesn't exist.`);
         }
       }
-    }
 
-    const phonebook = new PhoneBook();
+      const phonebook = new PhoneBook();
 
-    console.log(phonebook.addContact('Nika', 12122322432432));
+      console.log(phonebook.addContact("Nika", 12122322432432));
 
-    phonebook.getContact(12122322432432);
-
-  </script>
-  
-</body>
+      phonebook.getContact(12122322432432);
+    </script>
+  </body>
 </html>

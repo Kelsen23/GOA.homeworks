@@ -1,29 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- 
-</head>
-<body>
+  <head> </head>
+  <body>
+    <script>
+      class Counter {
+        static count = 0;
 
-  <script>
+        static increment() {
+          return (this.count += 1);
+        }
+      }
 
-  class Counter {
-
-    static count = 0;
-
-    static increment() {
-      return this.count += 1;
-    }
-
-  }
-
-  Counter.increment();
-  Counter.increment();
-  Counter.increment();
-  console.log(Counter.count);
-
-
-  </script>
-
-</body>
+      Counter.increment();
+      Counter.increment();
+      Counter.increment();
+      console.log(Counter.count);
+    </script>
+  </body>
 </html>

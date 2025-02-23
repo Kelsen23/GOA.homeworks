@@ -1,43 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head> </head>
+  <body>
+    <script>
+      class StudentGrades {
+        constructor(students) {
+          this.students = students;
+        }
 
-</head>
-<body>
+        getTopStudent() {
+          let highestScore = -1;
+          let topStudent = undefined;
 
-  <script>
-
-    class StudentGrades {
-
-      constructor (students) {
-        this.students = students;
+          this.students.forEach((score, name) => {
+            if (score > highestScore) {
+              highestScore = score;
+              topStudent = name;
+            }
+          });
+          return { name: topStudent, score: highestScore };
+        }
       }
 
-      getTopStudent() {
+      const studentGrades = new StudentGrades(
+        new Map([
+          ["George", 9],
+          ["Luka", 8],
+          ["Temo", 6.5],
+        ])
+      );
 
-        let highestScore = -1;
-        let topStudent = undefined;
-
-        this.students.forEach((score, name) => {
-          if (score > highestScore) {
-            highestScore = score;
-            topStudent = name;
-          }
-        });
-        return { name: topStudent, score: highestScore };;
-      }
- 
-    }
-    
-
-   const studentGrades = new StudentGrades(new Map([
-    ['George', 9], 
-    ['Luka', 8], 
-    ['Temo', 6.5]]));
-    
-    console.log(`${studentGrades.getTopStudent().name} has the highest score of ${studentGrades.getTopStudent().score}`);
-
-  </script>
-  
-</body>
+      console.log(
+        `${studentGrades.getTopStudent().name} has the highest score of ${
+          studentGrades.getTopStudent().score
+        }`
+      );
+    </script>
+  </body>
 </html>

@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- 
-</head>
-<body>
+  <head> </head>
+  <body>
+    <script>
+      const countries = new Map([
+        ["Germany", "Berlin"],
+        ["Finland", "Helsinki"],
+        ["USA", "Washington"],
+      ]);
 
-  <script>
+      const clonedCountries = new Map(countries);
 
-  const countries = new Map([['Germany', 'Berlin'], ['Finland', 'Helsinki'], ['USA', 'Washington']]);
-
-  const clonedCountries = new Map(countries);
-
-  clonedCountries.forEach((capital, country) => {
-    console.log(`${country}: ${capital}`);
-  })
-
-  </script>
-
-</body>
+      clonedCountries.forEach((capital, country) => {
+        console.log(`${country}: ${capital}`);
+      });
+    </script>
+  </body>
 </html>

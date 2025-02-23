@@ -1,28 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  
-</head>
-<body>
+  <head> </head>
+  <body>
+    <script>
+      const countries = new Map();
 
-  <script>
+      function addCountry(code, name) {
+        countries.set(code, name);
+      }
 
-  const countries = new Map();
+      addCountry("US", "United States");
+      addCountry("GE", "Georgia");
 
-  function addCountry(code, name) {
-      countries.set(code, name);
-  }
+      const countryCodes = countries.keys();
 
-  addCountry('US', 'United States');
-  addCountry('GE', 'Georgia');
-
-  const countryCodes = countries.keys();
-
-  for (let code of countryCodes) {
-      console.log(code);
-  }
-
-  </script>
-  
-</body>
+      for (let code of countryCodes) {
+        console.log(code);
+      }
+    </script>
+  </body>
 </html>

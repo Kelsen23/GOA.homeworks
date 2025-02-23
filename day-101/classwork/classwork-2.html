@@ -1,40 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head> </head>
+  <body>
+    <script>
+      class Vehicle {
+        constructor(make, model) {
+          this.make = make;
+          this.model = model;
+        }
 
-</head>
-<body>
-
-  <script>
-    class Vehicle {
-      constructor(make, model) {
-        this.make = make;
-        this.model = model;
+        displayInfo() {
+          console.log(
+            `This car is ${this.model} and its make is: ${this.make}`
+          );
+        }
       }
 
-      displayInfo() {
-        console.log(`This car is ${this.model} and its make is: ${this.make}`)
+      class Car extends Vehicle {
+        constructor(make, model, fuelType) {
+          super(make, model);
+          this.fuelType = fuelType;
+        }
+
+        displayInfo() {
+          console.log(
+            `This car is ${this.model} and its make is: ${this.make} and its fuel type is: ${this.fuelType}`
+          );
+        }
       }
 
-    }
+      const myCar = new Car("Tesla", "Model-X", "Electiric");
 
-    class Car extends Vehicle {
-      constructor(make, model, fuelType) {
-        super(make, model)
-        this.fuelType = fuelType;
-      }
-
-      displayInfo() {
-        console.log(`This car is ${this.model} and its make is: ${this.make} and its fuel type is: ${this.fuelType}`)
-      }
-
-    }
-
-    const myCar = new Car("Tesla", "Model-X", "Electiric");
-
-    myCar.displayInfo();
-
-  </script>
-  
-</body>
+      myCar.displayInfo();
+    </script>
+  </body>
 </html>

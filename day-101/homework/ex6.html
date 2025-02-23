@@ -1,45 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- 
-</head>
-<body>
+  <head> </head>
+  <body>
+    <script>
+      class Person {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
 
-  <script>
+        getDetails() {
+          console.log(this.name, this.age);
+        }
+      }
 
-  class Person {
+      class Student extends Person {
+        constructor(name, age, studentID) {
+          super(name, age);
+          this.studentID = studentID;
+        }
 
-    constructor(name, age) {
-      this.name= name;
-      this.age = age;
-    }
+        getDetails() {
+          console.log(this.name, this.age, this.studentID);
+        }
+      }
 
-    getDetails() {
-      console.log(this.name, this.age);
-    }
+      const student = new Student("Boba", 14, 2323);
 
-  }
-
-  class Student extends Person {
-
-    constructor(name, age, studentID) {
-      super(name, age);
-      this.studentID = studentID;
-    }
-
-
-    getDetails() {
-      console.log(this.name, this.age, this.studentID);
-    }
-
-  }
-
-  const student = new Student("Boba", 14, 2323);
-
-  student.getDetails();
-
-
-  </script>
-
-</body>
+      student.getDetails();
+    </script>
+  </body>
 </html>

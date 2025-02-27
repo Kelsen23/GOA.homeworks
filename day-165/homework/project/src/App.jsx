@@ -12,23 +12,29 @@ const App = () => {
 
   const getUser = async () => {
     if (inputValue !== "") {
-      const res = await fetch(`https://api.github.com/users/${inputValue}`);
-      const data = await res.json();
-      setUser({
-        username: data.login,
-        bio: data.bio,
-        joinDate: dayjs(data.created_at).format("D MMMM, YYYY"),
-        repos: data.public_repos,
-        followers: data.followers,
-        following: data.following,
-        profilePicture: data.avatar_url,
-        location: data.location,
-        twitter: data.twitter_username,
-        githubProfile: data.html_url,
-        blog: data.blog,
-        company: data.company,
-      });
-      setInputValue("");
+      try {
+        const res = await fetch(`https://api.github.com/users/${inputValue}`);
+        const data = await res.json();
+        if (res.ok) {
+          setUser({
+            username: data.login,
+            bio: data.bio,
+            joinDate: dayjs(data.created_at).format("D MMMM, YYYY"),
+            repos: data.public_repos,
+            followers: data.followers,
+            following: data.following,
+            profilePicture: data.avatar_url,
+            location: data.location,
+            twitter: data.twitter_username,
+            githubProfile: data.html_url,
+            blog: data.blog,
+            company: data.company,
+          })
+        }
+        setInputValue("");
+      } catch(error) {
+        console.error(`Something went wrong: ${error}`);
+      }
     }
   };
 
@@ -42,9 +48,6 @@ const App = () => {
         </div>
       </div>
 
-      <div>
-        
-      </div>
       <div className="search-container">
         <div className="left-input-container">
           <CiSearch className="search-icon" />
